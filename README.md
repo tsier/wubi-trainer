@@ -1,5 +1,7 @@
 # Wubi  typing trainier app
 
+based on
+ https://github.com/angular/angular-seed.git
 
 
 ## Getting Started
