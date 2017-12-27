@@ -72,12 +72,12 @@
                         }
                         else {
                             if (keyPressed === KEYS.SPACE) {
-                                if (scope.keyboard.isFocused) {              // stopfocus input
-                                    scope.stopFocusInput();
-                                }
-                                else {
-                                    scope.startFocusInput();
-                                }
+                                // if (scope.keyboard.isFocused) {              // stopfocus input
+                                    // scope.stopFocusInput();
+                                // }
+                                // else {
+                                //     scope.startFocusInput();
+                                // }
 
                             }
                             scope.$apply(function () {

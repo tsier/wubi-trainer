@@ -51,21 +51,21 @@
 
                 </md-content>
             </md-sidenav>
-            <md-button class="md-raised md-warn" ng-click="startFocusInput()" ng-hide="keyboard.isFocused"
+            <md-button class="md-raised md-warn" ng-click="startFocusInput()" ng-hide="keyboardStatus.focused"
                     >Start Typing
 
             </md-button>
 
-            <md-button class="md-primary" ng-click="stopFocusInput()" ng-show="keyboard.isFocused"
-                    > Pause
+            <md-button class="md-primary" ng-click="stopFocusInput()" ng-show="keyboardStatus.focused"
+                    >Typing
 
             </md-button>
 
 
             <div flex="50" class="focus-prompt" ng-enter="prompt()" tabindex="1"
-                 ng-focus="keyboard.isFocused= true"
-                 ng-blur="keyboard.isFocused= false"
-                 sync-focus-with="keyboard.isFocused"
+                 ng-focus="keyboardStatus.focused= true"
+                 ng-blur="keyboardStatus.focused= false"
+                 sync-focus-with="keyboardStatus.focused"
 
                     >
 

@@ -1,6 +1,8 @@
 angular.module('SelectionModule', []).service('Selection', function () {
 
     var Selection = function (data) {
+        // holds the selection of characters / components for practice
+
 
         if (angular.isDefined(data)) {
             this.sets = data.sets || {};

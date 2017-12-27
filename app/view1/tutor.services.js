@@ -173,8 +173,6 @@
 
                 markWrong: function () {
                     if (angular.isDefined(this.currentCharacter) && this.currentCharacter !== null) {
-
-
                         this.wrongAnswerGiven = true;
                     }
 
