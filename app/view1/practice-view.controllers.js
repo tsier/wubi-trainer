@@ -1,7 +1,7 @@
 (function () {
     "use strict";
-    angular.module('practiceViewControllers', ['tutorServices', 'LocalStorageModule', 'DataServicesModule', 'feedbackModule'])
-        .controller("FeedbackController", ['$scope', 'feedbackService', 'feedbackChannel', '$log', '$timeout', function ($scope, feedbackService, feedbackChannel, $log, $timeout) {
+    angular.module('practiceViewControllers', ['tutorServices', 'LocalStorageModule', 'DataServicesModule', 'feedbackModule' ,'keyboard'])
+        .controller("FeedbackController", ['$scope', 'feedbackService', 'feedbackChannel', '$log', '$timeout','keyboardStatus', function ($scope, feedbackService, feedbackChannel, $log, $timeout, keyboardStatus) {
             // control the feedback and UI Interface
 
             // display keyboard hint
@@ -36,6 +36,12 @@
                 }
             });
 
+          $scope.$watch('keyboardStatus.focused', function (nv, ov) {
+            // debugger;
+            if (nv !== ov) {
+              debugger
+            }
+          });
             $scope.display = {};
 
             $scope.$watch(function () {
@@ -99,7 +105,7 @@
         }])
 
 
-        .controller('PromptController', ['$scope', 'runner', '$log', '$timeout', 'CHARACTER_GROUPS', 'Hanzi', 'tutor', function ($scope, runner, $log, $timeout, CHARACTER_GROUPS, Hanzi, tutor) {
+        .controller('PromptController', ['$scope', 'runner', '$log', '$timeout', 'CHARACTER_GROUPS', 'Hanzi', 'tutor','keyboardStatus', function ($scope, runner, $log, $timeout, CHARACTER_GROUPS, Hanzi, tutor, keyboardStatus) {
             // reflect the data changes in the model
             //--------------- set group symbol on scope : content of sidebar via scope inheritance
             $scope.setCharacterGroupSymbol = function (groupName) {
@@ -178,18 +184,41 @@
             };
         }])
 
-        .controller('KeyBoardInput', ['$scope', function ($scope) {
+        .controller('KeyBoardInput', ['$scope',  'keyboardStatus', function ($scope, keyboardStatus) {
 
             //$scope.keyboard.isFocused = false;
 
+            $scope.keyboardStatus = keyboardStatus;
             $scope.startFocusInput = function () {
+              console.log('kb i starting', keyboardStatus);
+                keyboardStatus.listen = true;
+                keyboardStatus.focused = true;
+
                 $scope.keyboard.isFocused = true;
+
+
             };
+
+          $scope.$watch('keyboardStatus.listen', function (nv, ov) {
+            console.log("kb i listen from watch", nv, ov);
+            if (nv !== ov) {
+              console.log("listen from watch", nv);
+            }
+          });
+          $scope.$watch('keyboardStatus.focused', function (nv, ov) {
+            console.log("kb i focused from watch", nv, ov);
+            if (nv !== ov) {
+              console.log("focused from watch", nv);
+            }
+          });
 
             $scope.stop = function () {
                 alert('stop');
+
             };
             $scope.stopFocusInput = function () {
+              console.log('stopping', keyboardStatus);
+              keyboardStatus.listen = false;
 
                 $scope.keyboard.isFocused = false;
             };

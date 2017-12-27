@@ -4,6 +4,7 @@
 
         .constant("KEYS", {
             "ENTER": 13,
+            "z" : 90,
             "ESC": 27,
             "SPACE": 32
 
