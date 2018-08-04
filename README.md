@@ -1,31 +1,16 @@
-# Wubi  typing trainier app
+# Wubi  typing tutor app
 
-based on
+- This app allows to practice the keyboard layout and the rules for the Chinese wubi-input method
+- It contains lessons for character roots and hanzis
+
+
+for deployment see `docs/deployment.md`
+
+
+# Angular documentation
+this app is based on
  https://github.com/angular/angular-seed.git
 
-
-## Getting Started
-
-To get you started you can simply clone the angular-seed repository and install the dependencies:
-
-### Prerequisites
-
-
-### Clone angular-seed
-
-
-
-```
-run
-```
-
-
-
-```bash
-git clone --depth=1 https://github.com/angular/angular-seed.git <your-project-name>
-```
-
-The `depth=1` tells git to only pull down one commit worth of historical data.
 
 ### Install Dependencies
 
@@ -230,44 +215,6 @@ http-server -a localhost -p 8000
 
 Alternatively, you can choose to configure your own webserver, such as apache or nginx. Just
 configure your server to serve the files under the `app/` directory.
-
-
-### Running the App in Production
-
-This really depends on how complex your app is and the overall infrastructure of your system, but
-the general rule is that all you need in production are all the files under the `app/` directory.
-Everything else should be omitted.
-
-Angular apps are really just a bunch of static html, css and js files that just need to be hosted
-somewhere they can be accessed by browsers.
-
-If your Angular app is talking to the backend server via xhr or other means, you need to figure
-out what is the best way to host the static files to comply with the same origin policy if
-applicable. Usually this is done by hosting the files by the backend server or through
-reverse-proxying the backend server(s) and webserver(s).
-
-
-## Continuous Integration
-
-### Travis CI
-
-[Travis CI][travis] is a continuous integration service, which can monitor GitHub for new commits
-to your repository and execute scripts such as building the app or running tests. The angular-seed
-project contains a Travis configuration file, `.travis.yml`, which will cause Travis to run your
-tests when you push to GitHub.
-
-You will need to enable the integration between Travis and GitHub. See the Travis website for more
-instruction on how to do this.
-
-### CloudBees
-
-CloudBees have provided a CI/deployment setup:
-
-<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/CloudBees-community/angular-js-clickstart/master/clickstart.json">
-<img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
-
-If you run this, you will get a cloned version of this repo to start working on in a private git repo,
-along with a CI service (in Jenkins) hosted that will run unit and end to end tests in both Firefox and Chrome.
 
 
 ## Contact
